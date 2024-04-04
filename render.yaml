@@ -1,12 +1,12 @@
 databases:
-  - name: HelloWorld2
+  - name: helloworld
     plan: free
-    databaseName: HelloWorld2
-    user: HelloWorld2
+    databaseName: helloworld
+    user: helloworld
 
 services:
   - type: web
-    name: HelloWorld2
+    name: helloworld
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: HelloWorld2
+          name: helloworld
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
